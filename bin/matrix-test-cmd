@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -eu
+
+# print version info first and once
+gradle -version
+
+# https://search.maven.org/artifact/com.google.protobuf/protobuf-java
+# https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
+proto=('2.5.0' '2.6.0' '2.6.1' '3.0.2' '3.1.0' '3.2.0' '3.3.1' '3.4.0' '3.5.1' '3.6.1')
+
+# https://search.maven.org/artifact/org.apache.kafka/kafka-clients
+# https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+kafka=('0.10.2.2' '0.11.0.3' '1.0.2' '1.1.1' '2.0.0')
+
+for p in "${proto[@]}"; do
+    for k in "${kafka[@]}"; do
+        printf "\u001B[36mtesting proto v%s and kafka v%s …\u001B[0m\n" "$p" "$k"
+        gradle clean test "-Pcom.google.protobuf.version=$p" "-Porg.apache.kafka.version=$k"
+    done
+done

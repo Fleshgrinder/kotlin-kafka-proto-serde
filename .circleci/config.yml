@@ -1,0 +1,61 @@
+---
+version: "2.1"
+
+cwd: &cwd /home/gradle/project
+step-checkout: &step-checkout checkout
+step-jdk8: &step-jdk8 jdk8
+step-jdk10: &step-jdk10 jdk10
+step-publish: &step-publish publish
+
+workflows:
+  version: 2
+  steps:
+    - *step-checkout
+    - *step-jdk8
+        requires:
+          - *step-checkout
+    - *step-jdk10
+        requires:
+          - *step-checkout
+    - *step-publish
+        requires:
+          - *step-jdk8
+          - *step-jdk10
+
+jobs:
+  *step-checkout :
+    docker:
+      image: alpine/git
+    working_directory: *cwd
+    steps:
+      - checkout
+      - persist_to_workspace:
+          root: *cwd
+          paths: '*'
+
+  *step-jdk8 :
+    docker:
+      image: gradle:jdk8-slim
+    working_directory: *cwd
+    steps:
+      - attach_workspace:
+          at: *cwd
+      - run: ./bin/matrix-test
+
+  *step-jdk10 :
+    docker:
+      image: gradle:jdk10-slim
+    working_directory: *cwd
+    steps:
+      - attach_workspace:
+          at: *cwd
+      - run: ./bin/matrix-test
+
+  *step-publish :
+    docker:
+      image: gradle:jdk10-slim
+    working_directory: *cwd
+    steps:
+      - attach_workspace:
+          at: *cwd
+      - run: ./bin/matrix-test

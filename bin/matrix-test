@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -eu
+
+if ! command -v docker >/dev/null 2>&1; then
+    echo 'Could not locate docker executable, aborting!' >&2
+    exit 64
+fi
+
+for v in 8 10; do
+    docker run \
+        --rm \
+        --tty \
+        --volume "/$(pwd)://home/gradle/project" \
+        --workdir //home/gradle/project \
+        "gradle:jdk$v-slim" \
+        './/bin/matrix-test-cmd'
+done
