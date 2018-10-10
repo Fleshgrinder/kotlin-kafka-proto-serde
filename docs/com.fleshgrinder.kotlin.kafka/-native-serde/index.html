@@ -1,0 +1,125 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NativeSerde - kafka-proto-serde</title>
+<link rel="stylesheet" href="../.././style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kafka-proto-serde</a>&nbsp;/&nbsp;<a href="../index.html">com.fleshgrinder.kotlin.kafka</a>&nbsp;/&nbsp;<a href="./index.html">NativeSerde</a><br/>
+<br/>
+<h1>NativeSerde</h1>
+<code><span class="keyword">class </span><span class="identifier">NativeSerde</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-base-serde/index.html"><span class="identifier">BaseSerde</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p><a href="./index.html">NativeSerde</a> decorates Kafka <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a>s and allows direct access to its
+<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html">Serializer</a> and <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html">Deserializer</a> functions.</p>
+<h3>Parameters</h3>
+<p><a name="T"></a>
+<code>T</code> - is the concrete type the decorated <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a> is able to serialize and
+deserialize.</p>
+<p><a name="inner"></a>
+<code>inner</code> - <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a> to decorate with the <a href="../-base-serde/index.html">BaseSerde</a> interface.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../serde.html">serde</a></p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">NativeSerde</span><span class="symbol">(</span><span class="identifier" id="com.fleshgrinder.kotlin.kafka.NativeSerde$<init>(org.apache.kafka.common.serialization.Serde((com.fleshgrinder.kotlin.kafka.NativeSerde.T)))/inner">inner</span><span class="symbol">:</span>&nbsp;<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html"><span class="identifier">Serde</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code>
+<p><a href="./index.html">NativeSerde</a> decorates Kafka <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a>s and allows direct access to its
+<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html">Serializer</a> and <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html">Deserializer</a> functions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="do-deserialize.html">doDeserialize</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">doDeserialize</span><span class="symbol">(</span><span class="identifier" id="com.fleshgrinder.kotlin.kafka.NativeSerde$doDeserialize(kotlin.String, kotlin.ByteArray)/topic">topic</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.fleshgrinder.kotlin.kafka.NativeSerde$doDeserialize(kotlin.String, kotlin.ByteArray)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#T"><span class="identifier">T</span></a></code>
+<p>Extending classes must implement this function to convert the <a href="../-base-serde/do-deserialize.html#com.fleshgrinder.kotlin.kafka.BaseSerde$doDeserialize(kotlin.String, kotlin.ByteArray)/data">ByteArray</a> back to its original type <a href="../-base-serde/index.html#T">T</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="do-serialize.html">doSerialize</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">doSerialize</span><span class="symbol">(</span><span class="identifier" id="com.fleshgrinder.kotlin.kafka.NativeSerde$doSerialize(kotlin.String, com.fleshgrinder.kotlin.kafka.NativeSerde.T)/topic">topic</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.fleshgrinder.kotlin.kafka.NativeSerde$doSerialize(kotlin.String, com.fleshgrinder.kotlin.kafka.NativeSerde.T)/data">data</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code>
+<p>Extending classes must implement this method to convert <a href="../-base-serde/do-serialize.html#com.fleshgrinder.kotlin.kafka.BaseSerde$doSerialize(kotlin.String, com.fleshgrinder.kotlin.kafka.BaseSerde.T)/data">data</a> of type
+<a href="../-base-serde/index.html#T">T</a> to a <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html">ByteArray</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-base-serde/close.html">close</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">close</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Close this <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a>/<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html">Serializer</a>/<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html">Deserializer</a> and frees any currently
+held resources. This method must be idempotent because it might be called
+multiple times.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-serde/configure.html">configure</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="com.fleshgrinder.kotlin.kafka.BaseSerde$configure(kotlin.collections.Map((kotlin.String, kotlin.Any)), kotlin.Boolean)/config">config</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.fleshgrinder.kotlin.kafka.BaseSerde$configure(kotlin.collections.Map((kotlin.String, kotlin.Any)), kotlin.Boolean)/isKey">isKey</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configure this object, which will configure the underlying <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html">Serializer</a>
+and <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html">Deserializer</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-serde/deserialize.html">deserialize</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">deserialize</span><span class="symbol">(</span><span class="identifier" id="com.fleshgrinder.kotlin.kafka.BaseSerde$deserialize(kotlin.String, kotlin.ByteArray)/topic">topic</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.fleshgrinder.kotlin.kafka.BaseSerde$deserialize(kotlin.String, kotlin.ByteArray)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-base-serde/index.html#T"><span class="identifier">T</span></a><span class="symbol">?</span></code>
+<p>Convert <a href="../-base-serde/deserialize.html#com.fleshgrinder.kotlin.kafka.BaseSerde$deserialize(kotlin.String, kotlin.ByteArray)/data">data</a> to <a href="../-base-serde/index.html#T">T</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-serde/deserializer.html">deserializer</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">deserializer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html"><span class="identifier">Deserializer</span></a><span class="symbol">&lt;</span><a href="../-base-serde/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Get the underlying <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html">Deserializer</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-serde/serialize.html">serialize</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">serialize</span><span class="symbol">(</span><span class="identifier" id="com.fleshgrinder.kotlin.kafka.BaseSerde$serialize(kotlin.String, com.fleshgrinder.kotlin.kafka.BaseSerde.T)/topic">topic</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.fleshgrinder.kotlin.kafka.BaseSerde$serialize(kotlin.String, com.fleshgrinder.kotlin.kafka.BaseSerde.T)/data">data</span><span class="symbol">:</span>&nbsp;<a href="../-base-serde/index.html#T"><span class="identifier">T</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">?</span></code>
+<p>Convert <a href="../-base-serde/index.html#T">data</a> to a <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html">ByteArray</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-serde/serializer.html">serializer</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">serializer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html"><span class="identifier">Serializer</span></a><span class="symbol">&lt;</span><a href="../-base-serde/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Get the underlying <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html">Serializer</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

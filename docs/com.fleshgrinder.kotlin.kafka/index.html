@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>com.fleshgrinder.kotlin.kafka - kafka-proto-serde</title>
+<link rel="stylesheet" href=".././style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">kafka-proto-serde</a>&nbsp;/&nbsp;<a href="./index.html">com.fleshgrinder.kotlin.kafka</a><br/>
+<br/>
+<h2>Package com.fleshgrinder.kotlin.kafka</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-base-serde/index.html">BaseSerde</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">BaseSerde</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html"><span class="identifier">Serde</span></a><span class="symbol">&lt;</span><a href="-base-serde/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html"><span class="identifier">Serializer</span></a><span class="symbol">&lt;</span><a href="-base-serde/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html"><span class="identifier">Deserializer</span></a><span class="symbol">&lt;</span><a href="-base-serde/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p><a href="-base-serde/index.html">BaseSerde</a> combines <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a>, <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html">Serializer</a>, and <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html">Deserializer</a> into a single
+unit and fixes type information for Kotlin. One should not program against
+this directly, however, it is a convenient basis for writing Kafka <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a>s
+for other types that you might require in your code base.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-native-serde/index.html">NativeSerde</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">NativeSerde</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-base-serde/index.html"><span class="identifier">BaseSerde</span></a><span class="symbol">&lt;</span><a href="-native-serde/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p><a href="-native-serde/index.html">NativeSerde</a> decorates Kafka <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a>s and allows direct access to its
+<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html">Serializer</a> and <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html">Deserializer</a> functions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-proto-serde/index.html">ProtoSerde</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ProtoSerde</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-base-serde/index.html"><span class="identifier">BaseSerde</span></a><span class="symbol">&lt;</span><a href="-proto-serde/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>The <a href="-proto-serde/index.html">ProtoSerde</a> class is a Kafka <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a>/<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html">Serializer</a>/<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html">Deserializer</a> for
+<a href="-proto.html">Proto</a>, version 2 and 3, objects.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Type Aliases</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-proto.html">Proto</a></p>
+</td>
+<td>
+<code><span class="keyword">typealias </span><span class="identifier">Proto</span>&nbsp;<span class="symbol">=</span>&nbsp;<a href="https://developers.google.com/protocol-buffers/docs/reference/java/com/google/protobuf/Message.html"><span class="identifier">Message</span></a></code>
+<p><a href="-proto.html">Proto</a> is a more descriptive type alias for the very generic <a href="https://developers.google.com/protocol-buffers/docs/reference/java/com/google/protobuf/Message.html">Message</a>
+interface from Protobuf. It is also how most people address Protobuf in their
+conversational language, hence, it aligns the code with that.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extensions for External Classes</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="com.google.protobuf.-message/index.html">com.google.protobuf.Message</a></p>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="serde.html">serde</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">serde</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-base-serde/index.html"><span class="identifier">BaseSerde</span></a><span class="symbol">&lt;</span><a href="serde.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Construct new <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a>/<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html">Serializer</a>/<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html">Deserializer</a> for <a href="serde.html#T">T</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

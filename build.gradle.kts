@@ -67,6 +67,30 @@ val dokka by tasks.getting(DokkaTask::class) {
     })
 }
 
+val docs by tasks.registering(Copy::class) {
+    group = JavaBasePlugin.DOCUMENTATION_GROUP
+    description = "Copies the Dokka generated documentation into the `/docs` directory for GitHub publishing."
+    dependsOn("cleanDocs", dokka)
+    from("${dokka.outputDirectory}/style.css")
+    from("${dokka.outputDirectory}/${dokka.moduleName}") {
+        eachFile {
+            println(path)
+            if (path == "package-list") {
+                filter {
+                    if (it.startsWith('$')) ""
+                    else it
+                }
+            } else {
+                filter {
+                    if (it.contains("../style.css")) it.replace("../style.css", "./style.css")
+                    else it
+                }
+            }
+        }
+    }
+    into("$rootDir/docs")
+}
+
 val wrapper by tasks.registering(Wrapper::class) {
     gradleVersion = v("org.gradle.version")
     distributionType = Wrapper.DistributionType.ALL

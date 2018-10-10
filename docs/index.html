@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>kafka-proto-serde</title>
+<link rel="stylesheet" href="./style.css">
+</HEAD>
+<BODY>
+<a href="./index.html">kafka-proto-serde</a><br/>
+<br/>
+<p>The <code>kafka-proto-serde</code> module provides an <a href="https://kafka.apache.org/">Apache Kafka</a>
+<a href="https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/common/serialization/Serde.java">Serde</a>/<a href="https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/common/serialization/Serializer.java">Serializer</a>/<a href="https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/common/serialization/Deserializer.java">Deserializer</a> implementation for 
+<a href="https://developers.google.com/protocol-buffers/">Google’s Protocol Buffers</a> (aka. <em>Protobuf</em>, <em>Proto</em>) and some
+convenience building blocks to ease the Kotlin experience while working with the
+Java based libraries.</p>
+<h2>Getting Started</h2>
+<h3>Prerequisites</h3>
+<p>This library is compatible with the following minimum library versions and
+everything that was released at the time of writing this document:</p>
+<ul><li><a href="https://github.com/protocolbuffers/protobuf/releases"><code>com.google.protobuf:protobuf-java:[2.5,)</code></a></li>
+<li><a href="https://github.com/apache/kafka/releases"><code>org.apache.kafka:kafka-clients:[0.10,)</code></a></li>
+</ul>
+<p>Please file an <a href="https://github.com/Fleshgrinder/kotlin-kafka-proto-serde/issues">issue</a> if you discovered some incompatibility.</p>
+<h3>Installing</h3>
+<h4>Gradle</h4>
+<p>Add the following dependency to your <code>build.gradle.kts</code> script:</p>
+<pre><code class="lang-kotlin">dependencies {
+    implementation("com.fleshgrinder:kafka-proto-serde:1.0.0")
+}
+</code></pre>
+<h4>Maven</h4>
+<p>Add the following dependency to your <code>pom.xml</code>:</p>
+<pre><code class="lang-xml">&lt;dependency&gt;
+    &lt;groupId&gt;com.fleshgrinder&lt;/groupId&gt;
+    &lt;artifactId&gt;kafka-proto-serde&lt;/artifactId&gt;
+    &lt;version&gt;1.0.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<h3>Running the Tests</h3>
+<p>You can execute the usual <code>gradle test</code> command to run the tests with your
+current JVM installation but to verify that everything works with all
+dependencies <code>make matrix-test</code> (or <code>bin/matrix-test</code>) is available (requires
+<a href="https://www.gnu.org/software/bash/">Bash</a> and <a href="https://www.docker.com/">Docker</a>). Of course, in case you create a PR, continuous
+integration, via <a href="https://circleci.com/">CircleCI</a>, executes all tests automatically.</p>
+<h2>Project Info</h2>
+<ul><li>Please read <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> if you want to contribute, 
+  which would be very welcome.</li>
+<li>We use <a href="http://semver.org/">Semantic Versioning</a> and <a href="https://keepachangelog.com/">Keep a Changelog</a>, available versions and
+  changes are listed on our <a href="https://github.com/Fleshgrinder/kotlin-kafka-proto-serde/releases">releases</a> page.</li>
+<li>This module is licensed under the <a href="https://unlicense.org/">Unlicense</a>, see
+  <a href="UNLICENSE.md">UNLICENSE.md</a> for details.</li>
+</ul>
+<h3>Packages</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="com.fleshgrinder.kotlin.kafka/index.html">com.fleshgrinder.kotlin.kafka</a></p>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Index</h3>
+<a href="alltypes/index.html">All Types</a>
+</BODY>
+</HTML>

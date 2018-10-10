@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>alltypes - kafka-proto-serde</title>
+<link rel="stylesheet" href=".././style.css">
+</HEAD>
+<BODY>
+<p>The <code>kafka-proto-serde</code> module provides an <a href="https://kafka.apache.org/">Apache Kafka</a>
+<a href="https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/common/serialization/Serde.java">Serde</a>/<a href="https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/common/serialization/Serializer.java">Serializer</a>/<a href="https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/common/serialization/Deserializer.java">Deserializer</a> implementation for 
+<a href="https://developers.google.com/protocol-buffers/">Google’s Protocol Buffers</a> (aka. <em>Protobuf</em>, <em>Proto</em>) and some
+convenience building blocks to ease the Kotlin experience while working with the
+Java based libraries.</p>
+<h3>All Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<a href="../com.fleshgrinder.kotlin.kafka/-base-serde/index.html">com.fleshgrinder.kotlin.kafka.BaseSerde</a></td>
+<td>
+<p><a href="../com.fleshgrinder.kotlin.kafka/-base-serde/index.html">BaseSerde</a> combines <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a>, <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html">Serializer</a>, and <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html">Deserializer</a> into a single
+unit and fixes type information for Kotlin. One should not program against
+this directly, however, it is a convenient basis for writing Kafka <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a>s
+for other types that you might require in your code base.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../com.fleshgrinder.kotlin.kafka/com.google.protobuf.-message/index.html">com.google.protobuf.Message</a> (extensions in package com.fleshgrinder.kotlin.kafka)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../com.fleshgrinder.kotlin.kafka/-native-serde/index.html">com.fleshgrinder.kotlin.kafka.NativeSerde</a></td>
+<td>
+<p><a href="../com.fleshgrinder.kotlin.kafka/-native-serde/index.html">NativeSerde</a> decorates Kafka <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a>s and allows direct access to its
+<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html">Serializer</a> and <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html">Deserializer</a> functions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../com.fleshgrinder.kotlin.kafka/-proto.html">com.fleshgrinder.kotlin.kafka.Proto</a></td>
+<td>
+<p><a href="../com.fleshgrinder.kotlin.kafka/-proto.html">Proto</a> is a more descriptive type alias for the very generic <a href="https://developers.google.com/protocol-buffers/docs/reference/java/com/google/protobuf/Message.html">Message</a>
+interface from Protobuf. It is also how most people address Protobuf in their
+conversational language, hence, it aligns the code with that.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../com.fleshgrinder.kotlin.kafka/-proto-serde/index.html">com.fleshgrinder.kotlin.kafka.ProtoSerde</a></td>
+<td>
+<p>The <a href="../com.fleshgrinder.kotlin.kafka/-proto-serde/index.html">ProtoSerde</a> class is a Kafka <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serde.html">Serde</a>/<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Serializer.html">Serializer</a>/<a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/common/serialization/Deserializer.html">Deserializer</a> for
+<a href="../com.fleshgrinder.kotlin.kafka/-proto.html">Proto</a>, version 2 and 3, objects.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

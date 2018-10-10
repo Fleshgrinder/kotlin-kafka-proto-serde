@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BaseSerde.doDeserialize - kafka-proto-serde</title>
+<link rel="stylesheet" href="../.././style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kafka-proto-serde</a>&nbsp;/&nbsp;<a href="../index.html">com.fleshgrinder.kotlin.kafka</a>&nbsp;/&nbsp;<a href="index.html">BaseSerde</a>&nbsp;/&nbsp;<a href="./do-deserialize.html">doDeserialize</a><br/>
+<br/>
+<h1>doDeserialize</h1>
+<a name="com.fleshgrinder.kotlin.kafka.BaseSerde$doDeserialize(kotlin.String, kotlin.ByteArray)"></a>
+<code><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doDeserialize</span><span class="symbol">(</span><span class="identifier" id="com.fleshgrinder.kotlin.kafka.BaseSerde$doDeserialize(kotlin.String, kotlin.ByteArray)/topic">topic</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.fleshgrinder.kotlin.kafka.BaseSerde$doDeserialize(kotlin.String, kotlin.ByteArray)/data">data</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#T"><span class="identifier">T</span></a></code>
+<p>Extending classes must implement this function to convert the <a href="do-deserialize.html#com.fleshgrinder.kotlin.kafka.BaseSerde$doDeserialize(kotlin.String, kotlin.ByteArray)/data">ByteArray</a> back to its original type <a href="index.html#T">T</a>.</p>
+<h3>Parameters</h3>
+<p><a name="topic"></a>
+<code>topic</code> - associated with <a href="do-deserialize.html#com.fleshgrinder.kotlin.kafka.BaseSerde$doDeserialize(kotlin.String, kotlin.ByteArray)/data">data</a></p>
+<p><a name="data"></a>
+<code>data</code> - to deserialize</p>
+<h3>Exceptions</h3>
+<p><a name="SerializationException"></a>
+<code>SerializationException</code> - </p>
+<p><strong>Return</strong><br/>
+<a href="index.html#T">T</a> deserialized from <a href="do-deserialize.html#com.fleshgrinder.kotlin.kafka.BaseSerde$doDeserialize(kotlin.String, kotlin.ByteArray)/data">data</a></p>
+<p><strong>See Also</strong><br/>
+<p><a href="deserialize.html">deserialize</a></p>
+</p>
+</BODY>
+</HTML>

@@ -1,2 +1,2 @@
-rootProject.name = "kotlin-kafka-proto-serde"
+rootProject.name = "kafka-proto-serde"
 enableFeaturePreview("STABLE_PUBLISHING")
